@@ -1,4 +1,4 @@
-[
+export const data = [
     {
         "question" : "What is 2+2?",
         "answer" : "2+2 iquals 4!"

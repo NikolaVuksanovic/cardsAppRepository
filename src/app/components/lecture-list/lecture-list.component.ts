@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import { data } from '../../../shared/lecturesData';
+
 @Component({
   selector: 'app-lecture-list',
   templateUrl: './lecture-list.component.html',
@@ -7,13 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LectureListComponent implements OnInit {
 
-  lectures =[
-    
-  ]
+  private lectures = [];
 
   constructor() { }
 
   ngOnInit() {
+    this.lectures = data;
+    // console.log(this.lectures);
   }
 
 }
