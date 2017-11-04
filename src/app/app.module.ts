@@ -10,7 +10,8 @@ import { Page404Component } from './components/page404/page404.component';
 
 const appRoutes: Routes = [
   { path: '', component: LectureListComponent },
-  { path: ':name', component: LectureDetailComponent }
+  { path: ':name', component: LectureDetailComponent },
+  { path: '*', component: Page404Component }
 ];
 
 @NgModule({
