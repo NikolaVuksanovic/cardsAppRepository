@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, ParamMap } from '@angular/router';
+import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 
 import { data } from '../../../shared/lecturesData';
 
@@ -13,16 +13,18 @@ export class LectureDetailComponent implements OnInit {
   private cards = [];
   private name: string;
 
-  constructor(private route: ActivatedRoute) { }
+  constructor(
+    private route: ActivatedRoute,
+    private router: Router
+  ) { }
 
   ngOnInit() {
-    this.name = this.route.snapshot.params['name'];
-    let obj = data.find(el => el.name === this.name);
+    let obj = data.find(el => el.name === this.route.snapshot.params['name']);
 
     if (!obj) {
-      // TODO redirect to page not found
+      // TODO redirect to 404
     }
-
+    this.name = obj.name;    
     this.cards = obj.cards;
 
   }
