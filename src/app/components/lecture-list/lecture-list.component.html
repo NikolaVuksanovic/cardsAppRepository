@@ -1,5 +1,7 @@
 <div class="container">
   <div class="list-item" *ngFor="let lecture of lectures">
+    <a [routerLink]="['/lecture-detail', lecture.name]"> 
     {{ lecture.name }}
+  </a>
   </div>
 </div>

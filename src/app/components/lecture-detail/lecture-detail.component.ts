@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 
-import { data } from '../../../shared/lecturesData';
+import { LectureService } from '../../services/lecture.service';
 
 @Component({
   selector: 'app-lecture-detail',
@@ -14,12 +14,13 @@ export class LectureDetailComponent implements OnInit {
   private name: string;
 
   constructor(
+    private lectureService: LectureService,
     private route: ActivatedRoute,
     private router: Router
   ) { }
 
   ngOnInit() {
-    let obj = data.find(el => el.name === this.route.snapshot.params['name']);
+    let obj = this.lectureService.getLectureByName(this.route.snapshot.params['name']);
 
     if (!obj) {
       // TODO redirect to 404

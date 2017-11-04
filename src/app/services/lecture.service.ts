@@ -12,4 +12,8 @@ export class LectureService {
     return this.lectures;
   }
 
+  getLectureByName(name) {
+    return this.lectures.find(el => el.name === name);
+  }
+
 }

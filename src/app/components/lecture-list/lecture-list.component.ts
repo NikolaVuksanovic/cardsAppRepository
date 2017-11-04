@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { data } from '../../../shared/lecturesData';
+// import { data } from '../../../shared/lecturesData';
 import { LectureService } from '../../services/lecture.service';
 
 @Component({
@@ -18,7 +18,7 @@ export class LectureListComponent implements OnInit {
   ngOnInit() {
     this.lectures = this.lectureService.getLectures();
     // console.log(this.lectures);
-    console.log(this.lectures)
+    // console.log(this.lectures)
   }
 
 }
