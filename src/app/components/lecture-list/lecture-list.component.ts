@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { data } from '../../../shared/lecturesData';
+import { LectureService } from '../../services/lecture.service';
 
 @Component({
   selector: 'app-lecture-list',
@@ -8,14 +9,16 @@ import { data } from '../../../shared/lecturesData';
   styleUrls: ['./lecture-list.component.css']
 })
 export class LectureListComponent implements OnInit {
+  lectures:any;
 
-  private lectures = [];
-
-  constructor() { }
+  constructor(public lectureService:LectureService) {
+   
+  }
 
   ngOnInit() {
-    this.lectures = data;
+    this.lectures = this.lectureService.getLectures();
     // console.log(this.lectures);
+    console.log(this.lectures)
   }
 
 }
