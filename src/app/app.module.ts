@@ -6,6 +6,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
 import { LectureListComponent } from './components/lecture-list/lecture-list.component';
 import { LectureDetailComponent } from './components/lecture-detail/lecture-detail.component';
+import { Page404Component } from './components/page404/page404.component';
 
 const appRoutes: Routes = [
   { path: '', component: LectureListComponent },
@@ -16,7 +17,8 @@ const appRoutes: Routes = [
   declarations: [
     AppComponent,
     LectureListComponent,
-    LectureDetailComponent
+    LectureDetailComponent,
+    Page404Component
   ],
   imports: [
     BrowserModule,
