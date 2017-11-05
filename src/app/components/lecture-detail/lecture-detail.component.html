@@ -1,5 +1,6 @@
 <div class="container">
   <h1>{{ name }}</h1>
+  <a [routerLink]="['/lecture-detail', name, 'practice']"> Start practice</a>
   <div class="cards-item" *ngFor="let card of cards">
     {{ card.question }}
   </div>

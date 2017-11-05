@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, ParamMap, Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 import { LectureService } from '../../services/lecture.service';
 
@@ -12,6 +12,7 @@ export class LectureDetailComponent implements OnInit {
 
   private cards = [];
   private name: string;
+
 
   constructor(
     private lectureService: LectureService,
@@ -27,7 +28,7 @@ export class LectureDetailComponent implements OnInit {
     }
     this.name = obj.name;    
     this.cards = obj.cards;
-
+    console.log(this.route.snapshot);
   }
 
 }

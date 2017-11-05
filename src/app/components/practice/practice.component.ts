@@ -1,4 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+
+
+import { LectureService } from '../../services/lecture.service';
+
 
 @Component({
   selector: 'app-practice',
@@ -7,9 +12,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PracticeComponent implements OnInit {
 
-  constructor() { }
+  cardsList : any[];
+
+  showAnswer: boolean = false;
+
+  selectedCard = null;
+
+  constructor(
+    public lectureService: LectureService,  
+    public route: ActivatedRoute,
+    public router: Router,
+  ) { }
 
   ngOnInit() {
+    this.cardsList = this.lectureService.getLectureByName(this.route.snapshot.params['name']);
+    this.selectedCard = this.cardsList['cards'][0];
   }
-
+  
+  toggleCard() {
+    this.showAnswer = !this.showAnswer;
+  }
 }

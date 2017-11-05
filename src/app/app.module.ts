@@ -12,8 +12,9 @@ import { PracticeComponent } from './components/practice/practice.component';
 
   const appRoutes: Routes = [
     { path: '', component: LectureListComponent },
+    { path: 'lecture-detail/:name/practice', component: PracticeComponent },
     { path: 'lecture-detail/:name', component: LectureDetailComponent },
-  { path: '**', component: Page404Component }
+    { path: '**', component: Page404Component }
 ];
 
 @NgModule({

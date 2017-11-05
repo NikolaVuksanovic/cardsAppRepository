@@ -1,3 +1,8 @@
-<p>
-  practice works!
-</p>
+<div (click)="toggleCard()">
+  <p *ngIf="!showAnswer">
+    {{ selectedCard.question }}
+  </p>
+  <p *ngIf="showAnswer">
+    {{ selectedCard.answer }}
+  </p>
+</div>
